@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 // Database connectivity
-mongoose.connect("mongodb+srv://SHUBZ:shubz@cluster0.z0lvq.mongodb.net/I_sea?retryWrites=true&w=majority");
+mongoose.connect("database link password and collection name integreted");
 
 /* "/getUsers" route =>to get info from databse */
 app.get("/getUsers",(req,res)=>{         // error may occur FIRST we write **req** then **res** as it is request and response
