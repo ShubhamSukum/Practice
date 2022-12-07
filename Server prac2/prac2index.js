@@ -9,7 +9,7 @@ app.use(cors());    // Cross Resource Origin Sharing
 
 // MongoDB connection
 
-mongoose.connect("mongodb+srv://SHUBZ:shubz@cluster0.z0lvq.mongodb.net/I_sea?retryWrites=true&w=majority");
+mongoose.connect("database link");
 
 // for getUsers route
 // app.get("/route",(req,res)=>{});
