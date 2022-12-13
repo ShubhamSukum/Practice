@@ -43,7 +43,7 @@ int retfun(int n)
   return n + retfun(n-1); 
 }
 
-// 5 factorial
+// 5 factorial(parameterized recursion)
 
 // int fact(int n,int cnt,int facto)
 // {  // MESSED UP
@@ -51,6 +51,26 @@ int retfun(int n)
   
 //   facto=fact(n+1,cnt+1,facto)*fact(n+1,cnt+1,facto);
 // }
+// SOLUTION => 
+/*
+/Parameterised Recursion
+#include<iostream>
+using namespace std;
+
+void factorial(int i,int n){
+    if(n==0){
+        cout<<i;
+        return;
+    }
+    factorial(i*n,n-1);
+}
+int main(){
+    int n;
+    cin>>n;
+    factorial(1,n);
+    return 0;   
+}
+*/
 
 /*
 // function to find factorial of given number
@@ -68,7 +88,7 @@ unsigned int factorial(unsigned int n)
  
 */
 
-// 5 Factorial
+// 5 Factorial functional recursion
 int fact2(int n)
 {
   if(n==0) return 1;
