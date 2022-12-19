@@ -87,8 +87,8 @@ Output:
 Your Task:  
 You don't need to read input or print anything. Your task is to complete the function subsetSums() which takes a list/vector and an integer N as an input parameter and return the list/vector of all the subset sums.
 
-Expected Time Complexity: O(2N)
-Expected Auxiliary Space: O(2N)
+Expected Time Complexity: O(2 raise to N)
+Expected Auxiliary Space: O(2 raise to N)
 
 Constraints:
 1 <= N <= 15
