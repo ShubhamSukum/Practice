@@ -108,7 +108,10 @@ public:
             return;
         }
         
+        // picked
         Sumset(ind+1,sum+arr[ind],arr,N,ans);
+        
+        // Not picked
         Sumset(ind+1,sum,arr,N,ans);
     }
     
