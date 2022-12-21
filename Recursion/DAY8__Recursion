@@ -31,7 +31,32 @@ Acceptance Rate
 
 ANSWER =>
 
-// Striver logic
+class Solution {
+public: /* OPTIMISED SOLUTION striver*/
+    void lupy(int ind,vector<vector<int>>& ans,vector<int>& nums)
+    {
+        if(ind==nums.size()) 
+        {
+            ans.push_back(nums);
+            return;
+        }
+
+        for(int i=ind;i<nums.size();i++)
+        {
+            swap(nums[ind],nums[i]);
+            lupy(ind+1,ans,nums);
+            swap(nums[ind],nums[i]);
+        }
+    }
+
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> ans;
+        lupy(0,ans,nums);   // 0 is ind here
+        return ans;
+    }
+};
+
+// not that optimised extra freq and ds
 
 class Solution {
 public:
