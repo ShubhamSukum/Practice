@@ -1,4 +1,4 @@
-37. Sudoku Solver (LeetCode) and M-color problem from gfg (below sudoku)
+37. Sudoku Solver (LeetCode), M-color problem from gfg (below sudoku) and Palindrome partitioning (below M-color problem)
 Hard
 
 Write a program to solve a Sudoku puzzle by filling the empty cells.
@@ -195,3 +195,72 @@ int main() {
     }
     return 0;
 }
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+131. Palindrome Partitioning
+Medium
+
+Given a string s, partition s such that every substring of the partition is a palindrome. Return all possible palindrome partitioning of s.
+
+
+Example 1:
+
+Input: s = "aab"
+Output: [["a","a","b"],["aa","b"]]
+Example 2:
+
+Input: s = "a"
+Output: [["a"]]
+ 
+
+Constraints:
+
+1 <= s.length <= 16
+s contains only lowercase English letters.
+Accepted
+549.8K
+Submissions
+876.1K
+Acceptance Rate
+62.7%
+
+ANSWER =>
+
+class Solution {
+public:
+    void func(int ind,string s,vector<vector<string>>& ans,vector<string>& part)
+    {
+        if(ind==s.size())
+        {
+            ans.push_back(part);
+            return;
+        }
+
+        for(int i=ind;i<s.size();i++)
+        {
+            if(isPalindrome(s,ind,i))
+            {
+                part.push_back(s.substr(ind,i-ind+1));
+                func(i+1,s,ans,part);
+                part.pop_back();
+            }
+        }
+    }
+
+    bool isPalindrome(string s,int start,int end)
+    {
+        while(start<=end)
+        {
+            if(s[start++]!=s[end--])return false;
+        }
+        return true;
+    }
+
+    vector<vector<string>> partition(string s) {
+        vector<vector<string>> ans;
+        vector<string> part;
+        func(0,s,ans,part);
+        return ans;
+    }
+};
