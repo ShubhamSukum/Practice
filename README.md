@@ -1,2 +1,3 @@
 # Practice
-learning
+
+Action rather than ideas or thought.
