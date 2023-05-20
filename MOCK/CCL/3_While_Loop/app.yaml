@@ -4,4 +4,5 @@ threadsafe: true
 
 handlers:
    - url: /
-     script: main.ok
+     script: main.app
+     
