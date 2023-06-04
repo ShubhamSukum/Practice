@@ -20,6 +20,7 @@ export class LoginComponent {
 
       if(user){
         alert("Login Successfull :)");
+        localStorage.setItem("user",JSON.stringify(user));
         window.location.href="/profile";
       }else{
         alert("Failed to Log In!! Try Again!!");
