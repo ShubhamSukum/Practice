@@ -1,0 +1,8 @@
+Create a material UI app with typescript
+=> npx create-react-app appname --template typescript
+
+To install material UI in your application
+=> npm install @mui/material @emotion/react @emotion/styled 
+
+Add a default bottom margin
+=> <Typography variant="h4" gutterBottom>H4 Heading</Typography>
