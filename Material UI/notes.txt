@@ -6,3 +6,6 @@ To install material UI in your application
 
 Add a default bottom margin
 => <Typography variant="h4" gutterBottom>H4 Heading</Typography>
+
+How to install material UI's ICON ?
+=> npm install @mui/icons-material
