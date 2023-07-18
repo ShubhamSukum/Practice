@@ -9,3 +9,7 @@ Add a default bottom margin
 
 How to install material UI's ICON ?
 => npm install @mui/icons-material
+
+aria-label is like alt in img (it is used in symentic purpose)
+
+We can use Stack,Box from MaterialUI instead of using DIV.
