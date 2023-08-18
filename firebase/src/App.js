@@ -1,27 +1,46 @@
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
+import { useEffect} from 'react';
 import './App.css';
 import {Auth} from "./components/auth";
-import {db,auth} from "./config/firebase";
-import {getDocs,collection,addDoc,deleteDoc,updateDoc,doc} from "firebase/firestore"
+import {db,auth,storage} from "./config/firebase";
+import {getDocs,collection,addDoc,deleteDoc,updateDoc,doc} from "firebase/firestore";
+import {ref,uploadBytes} from "firebase/storage";
 
 function App() {
   const [movies,getMovies]=useState([]);
   const [title,setTitle]=useState("");
   const [released,setReleased]=useState(0);
   const [oscar,setOscar]=useState(false);
-
   const [up,setUp]=useState("");
+  const [file,setFile]=useState(null);
 
   const moviesCollectionRef=collection(db,"movies");
 
-  useEffect(()=>{
-    getList();
-  },[]);
+  // console.log(auth?.currentUser?.email);
 
-  const getList=async()=>{
+  useEffect(()=>{
+
+    const getList=async()=>{
+      try{
+        const data= await getDocs(moviesCollectionRef);
+        const filtered=  data.docs.map((doc)=>({
+          ...doc.data(),
+          id:doc.id,
+        }));
+  
+        getMovies(filtered);
+  
+      }catch(err){
+        console.error(err);
+      } 
+    }
+
+    getList();
+  },[moviesCollectionRef]);
+
+  const getList=async()=>{  
     try{
       const data= await getDocs(moviesCollectionRef);
-      // console.log(data);
       const filtered=  data.docs.map((doc)=>({
         ...doc.data(),
         id:doc.id,
@@ -35,6 +54,7 @@ function App() {
   }
 
   const onSubmitMovie=async()=>{
+    try{
       await addDoc(moviesCollectionRef,{
         title:title,
         released:released,
@@ -42,7 +62,10 @@ function App() {
         userId:auth?.currentUser?.uid,   
       })
 
-      getList();  
+      getList(); 
+    }catch(err){
+      console.log(err);
+    } 
   }
 
   const deleteMovie=async(id)=>{
@@ -57,7 +80,16 @@ function App() {
     getList();  
   }
 
-  
+  const uploadFile=async()=>{
+    if(!file) return;
+
+    try{
+      const fileRef=ref(storage,`fireFolder/${file.name}`);
+      await uploadBytes(fileRef,file);
+    }catch(err){
+      console.error(err);
+    }
+  };
 
   return (
     <div className="App">
@@ -83,8 +115,11 @@ function App() {
                 <input type='text' placeholder='Update Title' onChange={(e)=>setUp(e.target.value)}/>
                 <button onClick={()=>{updateMovie(movie.id)}} style={{padding:"3px",margin:"5px"}}>Update</button>
 
+                <div>
+                  <input type='file' onChange={(e)=>setFile(e.target.files[0])}/>
+                  <button onClick={uploadFile}>Upload file</button>
+                </div>
             </div>
-            
           ))
         }
       </div>
