@@ -1,0 +1,62 @@
+[
+    {
+        "company": "ZS Associates",
+        "branch": "All (UG)",
+        "CE": 1,
+        "ENTC": 2,
+        "IT": 2,
+        "male": 2,
+        "female": 3,
+        "total": 5,
+        "salary": 8.93,
+        "investment": 44.65
+    },
+    {
+        "company": "UBS",
+        "branch": "All (UG)",
+        "CE": 2,
+        "ENTC": 0,
+        "IT": 1,
+        "male": 3,
+        "female": 0,
+        "total": 3,
+        "salary": 10,
+        "investment": 30
+    },
+    {
+        "company": "Barclays",
+        "branch": "CE & IT (UG)",
+        "CE": 1,
+        "ENTC": 0,
+        "IT": 0,
+        "male": 1,
+        "female": 0,
+        "total": 1,
+        "salary": 8,
+        "investment": 8
+    },
+    {
+        "company": "Persistent",
+        "branch": "CE & IT (UG)",
+        "CE": 1,
+        "ENTC": 0,
+        "IT": 0,
+        "male": 1,
+        "female": 0,
+        "total": 1,
+        "salary": 6.41,
+        "investment": 6.41
+    },
+    {
+        "company": "Goldman Sachs",
+        "branch": "All (UG)",
+        "CE": 3,
+        "ENTC": 0,
+        "IT": 0,
+        "male": 1,
+        "female": 2,
+        "total": 3,
+        "salary": 23,
+        "investment": 69
+    }
+]
