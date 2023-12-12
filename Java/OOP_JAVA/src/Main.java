@@ -1,6 +1,8 @@
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
+import NewPackage.Human;
+
 class Student{
     int age;
     char letter;
@@ -61,14 +63,14 @@ public class Main {
 //        System.out.println(user.marks);
 //        System.out.println(user.ok);
 
-//        calling another constructor from constructor
+//        ********* calling another constructor from constructor  ************
 //        Student otherCon=new Student(user);
 //        System.out.println(otherCon.age);
 //        System.out.println(otherCon.letter);
 //        System.out.println(otherCon.name);
 //        System.out.println(otherCon.marks);
 //        System.out.println(otherCon.ok);
-
+//        ********* calling another constructor from constructor  ************
 
 //        **********SWAPPING************
 //        int[] values = {1, 2};
@@ -76,5 +78,13 @@ public class Main {
 //        System.out.println("Before swap: " + values[0] + ", " + values[1]);
 //        Student.swap(values);
 //        System.out.println("After swap: " + values[0] + ", " + values[1]);
+
+//        Human h1=new Human(17,100);
+//        Human h2=new Human(17,100);
+//        Human h3=new Human(17,100);
+//        Human h4=new Human(17,100);
+
+//        System.out.println(Human.population);
+
     }
 }
