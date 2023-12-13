@@ -11,7 +11,7 @@ class Student{
     boolean ok;
 
     Student(){
-        this (99,'g',false,"another constructor",9.34f);
+//        this (99,'g',false,"another constructor",9.34f);
     }
     Student(Student other){
         this.age=other.age;
@@ -19,7 +19,6 @@ class Student{
         this.ok=other.ok;
         this.name=other.name;
         this.marks=other.marks;
-
 //        System.out.println("31 111 53");
     }
 
@@ -36,16 +35,26 @@ class Student{
         arr[0] = arr[1];
         arr[1] = temp;
     }
+
+    void non_static(){
+        System.out.println("Non Static method!! Need to create a Object to access it!!");
+        System.out.println("also accessing static method!!");
+    }
+
+    static void static_method(){
+        System.out.println("No need to create object");
+//        non_static();     /* Can't access a Non-static Method  */
+    }
 };
 
 public class Main {
     public static void main(String[] args) {
-        Student[] students=new Student[5];
+//        Student[] students=new Student[5];
 
 //      students Shubz;
 //      System.out.println(Arrays.toString(students));
 //      compile time   Run time
-        Student shubz= new Student();
+//        Student shubz= new Student();
 
 //        System.out.println(shubz.age);
 //        System.out.println(shubz.letter);
@@ -56,7 +65,7 @@ public class Main {
 //        Setting user defined values
 
 //        Student user = new Student(1, 'a', true, "word", 50.0f);
-        Student user = new Student();
+//        Student user = new Student();
 //        System.out.println(user.age);
 //        System.out.println(user.letter);
 //        System.out.println(user.name);
@@ -85,6 +94,15 @@ public class Main {
 //        Human h4=new Human(17,100);
 
 //        System.out.println(Human.population);
+
+//***************** static and Non Static Things **************************
+
+//        Student.static_method();          // Student is class name
+
+//        Student.non_static();   // non static can't be accessed like this
+
+        Student AccessNonStatic = new Student();
+        AccessNonStatic.non_static();
 
     }
 }
