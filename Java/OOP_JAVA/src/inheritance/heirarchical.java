@@ -1,8 +1,8 @@
 package inheritance;
 
 public class heirarchical {
-     int no;
-     String company;
+    int no;
+    String company;
 
      heirarchical(){
          this.no=6;
@@ -12,5 +12,9 @@ public class heirarchical {
     heirarchical(int no,String company){
         this.no=no;
         this.company=company;
+    }
+
+    public void hello(){
+        System.out.println("Hello from Parent!!");
     }
 }

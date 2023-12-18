@@ -46,5 +46,11 @@ public class Main {
 //        System.out.println(Obj.no+" "+ Obj.company+" "+Obj.heir2);
 //      *********** Hierarchical INHERITANCE **************
 
+
+//        Testing
+        heir1 childObj=new heir1(18,"SUMONE",100);
+//        childObj.hello();
+
+        System.out.println(childObj.company+" " +childObj.no+" "+childObj.heir1);
     }
 }
