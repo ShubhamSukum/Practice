@@ -1,12 +1,13 @@
-package com.database.sql.dynamic;
+package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DynamicApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DynamicApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
+
 }

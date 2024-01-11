@@ -1,13 +1,13 @@
-package com.rev.revision;
+package com.dynamic.sql.rev;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RevisionApplication {
+public class RevApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RevisionApplication.class, args);
+		SpringApplication.run(RevApplication.class, args);
 	}
 
 }
