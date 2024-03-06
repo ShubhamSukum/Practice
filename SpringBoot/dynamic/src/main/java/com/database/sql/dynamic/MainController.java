@@ -6,8 +6,13 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path = "/demo")
 public class MainController  {
-    @Autowired
+
     private UserRepository userRepository;
+
+    @Autowired
+    public MainController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @PostMapping(path = "/add")
     public @ResponseBody Users addNewUser(@RequestParam String name,@RequestParam String email){
